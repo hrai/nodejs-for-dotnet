@@ -13,3 +13,5 @@ console.log(msg.first);
 
 var logger = require('./logger');
 logger.log('this is from the logger');
+
+var _ = require('underscore');

@@ -4,11 +4,11 @@
   "description": "FunWithNode",
   "main": "app.js",
   "author": {
-    "name": "Shawn",
+    "name": "Hangjit",
     "email": ""
   },
   "dependencies": {
-    "underscore": "~1.6.0",
-    "express": "~3.4.8"
+    "express": "^3.4.8",
+    "underscore": "^1.10.2"
   }
 }
