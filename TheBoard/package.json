@@ -1,5 +1,5 @@
 {
-  "name": "TheBoard",
+  "name": "the-board",
   "version": "0.1.0",
   "description": "A message board based on sticky notes.",
   "main": "server.js",
