@@ -9,6 +9,7 @@
     "ejs-locals": "~1.0.2",
     "express": "~3.4.8",
     "jade": "~1.1.5",
+    "mongodb": "^3.6.0",
     "underscore": "~1.6.0",
     "vash": "~0.7.7"
   },
