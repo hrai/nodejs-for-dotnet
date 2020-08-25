@@ -1,9 +1,38 @@
 ﻿(function(data) {
+  var seedData = require('./seedData');
+  var database = require('./database');
 
-  var seedData = require("./seedData");
-
-  data.getNoteCategories = function (next) {
+  data.getNoteCategories = function(next) {
     next(null, seedData.initialNotes);
   };
 
+  function seedDatabase() {
+    database.getDb(function(err, db) {
+      if (err) {
+        console.log('failed to seed db: ' + err);
+      } else {
+        db.notes.count(function(err, count) {
+          if (err) {
+            console.log('failed to retrieve db count');
+          } else {
+            if (count == 0) {
+              console.log('seeding db...');
+              seedData.initialNotes.forEach(function(item) {
+                db.notes.insertOne(item, function(err) {
+                  if (err) {
+                    console.log('failed to insert note into db');
+                  }
+                });
+              });
+            } else {
+              console.log('db already seeded');
+            }
+          }
+        });
+      }
+    });
+  }
+
+  seedDatabase();
 })(module.exports);
+
