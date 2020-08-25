@@ -19,7 +19,7 @@
       data.createNewCategory(categoryName, function(err) {
         if (err) {
           console.log(err);
-          req.flash('newCatName', err);
+          // req.flash('newCatName', err);
           res.redirect('/');
         } else {
           res.redirect('/notes/' + categoryName);
