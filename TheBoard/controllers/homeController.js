@@ -22,10 +22,9 @@
           req.flash('newCatName', err);
           res.redirect('/');
         } else {
-          res.redirect('/notes' + categoryName);
+          res.redirect('/notes/' + categoryName);
         }
       });
     });
   };
 })(module.exports);
-
