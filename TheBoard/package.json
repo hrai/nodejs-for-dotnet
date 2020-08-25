@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "A message board based on sticky notes.",
   "main": "server.js",
+   "scripts": {
+    "start": "yarn run grunt"
+    },
   "author": "hangjit@rai",
   "dependencies": {
     "ejs": "~0.8.5",

@@ -18,6 +18,27 @@
     });
   };
 
+  data.createNewCategory = function(categoryName, next) {
+    database.getDb(function(err, db) {
+      if (err) {
+        next(err, null);
+      } else {
+        var cat = {
+          name: categoryName,
+          notes: [],
+        };
+
+        db.notes.insertOne(cat, function(err) {
+          if (err) {
+            next(err, null);
+          } else {
+            next(null);
+          }
+        });
+      }
+    });
+  };
+
   function seedDatabase() {
     database.getDb(function(err, db) {
       if (err) {
