@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 //var ejsEngine = require("ejs-locals");
 var controllers = require('./controllers');
+var flash = require('connect-flash');
 
 // Setup the View Engine
 //app.set("view engine", "jade");
@@ -11,6 +12,9 @@ var controllers = require('./controllers');
 app.set('view engine', 'vash');
 
 app.use(express.urlencoded());
+app.use(express.cookieParser());
+app.use(express.session({ secret: 'TheBoard' }));
+app.use(flash());
 
 // set the public static resource folder
 app.use(express.static(__dirname + '/public'));
