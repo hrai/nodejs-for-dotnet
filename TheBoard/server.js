@@ -12,6 +12,7 @@ var flash = require('connect-flash');
 app.set('view engine', 'vash');
 
 app.use(express.urlencoded());
+app.use(express.json());
 app.use(express.cookieParser());
 app.use(express.session({ secret: 'TheBoard' }));
 app.use(flash());
