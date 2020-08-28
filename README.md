@@ -1,4 +1,4 @@
-﻿# TheBoard
+﻿# TheBoard setup
 
 ## MongoDB docker
 
