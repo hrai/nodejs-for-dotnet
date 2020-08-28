@@ -10,6 +10,7 @@
           title: 'The Board',
           error: err,
           categories: results,
+          newCatError: req.flash('newCatName'),
         });
       });
     });
@@ -18,8 +19,9 @@
       var categoryName = req.body.categoryName;
       data.createNewCategory(categoryName, function(err) {
         if (err) {
+          // Handle Error
           console.log(err);
-          // req.flash('newCatName', err);
+          req.flash('newCatName', err);
           res.redirect('/');
         } else {
           res.redirect('/notes/' + categoryName);
